@@ -1,0 +1,15 @@
+#Description
+Adds tailscale using evironment variable
+env $TSKEY
+
+#TEST
+docker run --name passbolt $(docker build  -t osspade/tailscale-passbolt:latest --load --no-cache -q .)
+
+#SSH
+docker exec -it passbolt sh
+
+#Deploy & BUILD
+docker build -t osspade/tailscale-passbolt .
+docker push osspade/tailscale-passbolt:latest
+
+
